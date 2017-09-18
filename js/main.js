@@ -17,7 +17,7 @@ function initMap() {
   service.textSearch(request, callback);
 
   // autocomplete search function
-  var placeInput = document.getElementById('place-input');
+  var placeInput = document.getElementById('city-input');
   var autocomplete = new google.maps.places.Autocomplete(placeInput);
   var place;
 
