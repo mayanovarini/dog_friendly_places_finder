@@ -11,6 +11,8 @@
 		<link rel="shortcut icon" href="favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" href="css/checkbox.css">
+
 		
 	</head>
 	<body class="nl-blurred">
@@ -36,56 +38,59 @@
 						<option value="3">a Dog Park</option>
 						<option value="4">the Vet</option>
 					</select>
-
 					
-					in <input type="text" value="" placeholder="any city" data-subline="For example: <em>San Francisco</em> or <em>Berkeley</em>"/>
+					in <input type="text" id="tocopy" placeholder="any city" data-subline="For example: <em>San Francisco</em> or <em>Berkeley</em>"/>
 					<div class="nl-submit-wrap">
-						<button class="nl-submit" type="submit"><a href="#top">Find a place</a></button>
+						<button class="nl-submit" type="submit" id="add-location"><a href="#top">Find a place</a></button>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>
 			</div>	
 		</div><!-- /container demo -->
 
-		<div class="container-fluid">
+		    <nav class="sidenav" id="mysidenav">
+		      <a id="x-button" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		      <ul style="list-style: none">
 
-		  <div class="row content">
-
-		    <div class="col-sm-3 sidenav">
-		    			<p><a href="#two">Search again</a></p>
-
-		      <h4>Search - List</h4>
-		      <ul class="nav nav-pills nav-stacked">
 		        <form class="form-inline">
 		          <div class="input-group">
-		            <input type="text" class="form-control" id="place-input" placeholder="Where do you want to take your pet to?">
-		            <span class="input-group-btn">
-		              <button type="submit" class="btn btn-default" id="add-location">Find</button>
-		            </span>
+		          	<form>
+					<input type="text" type="submit" id="place-input" placeholder="Where do you want to take your pet to?">
+					<button display="none" type="submit" id="add-location">Find a place</button>
+					</form>
 		          </div>
 		        </form>
 
-		        <li>Weather</li>
-		        <li>List</li>
-		      </ul><br>
-		    </div> <!-- /sidenav-->
+		        <div id="link-hover">
+		        	
+			      <li><a href="#">weather api</a></li>
+				  <li><a href="#">list of places</a></li>
+				  	<ul style="list-style: none">
+					  <li><a href="#">Clients</a></li>
+					  <li><a href="#">Contact</a><li>
+					</ul>
+		    	</div>
+		      </ul>
+		    </nav> <!-- /sidenav needs to be pushed slide to the right into the map-->
 
-		    <div id="map-area" class="col-sm-9">
-		      <div id="top">
-		      	<div id="map"></div>
-		      </div>
+		    <section id="section-id">
+		    	<header>
+		    		<span id="top" onclick="openNav()">&#9776; 
+		    		</span>
+		    		<a id="back-to-top" href="#two">Back to the top</a>			
+			    </header>
 
-		      <div id="infowindow-content">
-		        <img src="" width="16" height="16" id="place-icon">
-		        <span id="place-name"  class="title"></span><br>
-		      </div>
-		    </div> <!-- / map-area -->
-		  </div> <!-- / raw-content -->
-		</div> <!-- / container-fluid  -->
+		    	<div id="map-area">
+		     
+		      		<div id="map"></div>
+		      
+			      <div id="infowindow-content">
+			        <img src="" width="16" height="16" id="place-icon">
+			        <span id="place-name"  class="title"></span><br>
+			      </div>
 
-
-
-
+		    	</div> <!-- / map-area -->
+		    </section> 
 
 		<script src="js/nlform.js"></script>
 		<script>
@@ -100,6 +105,25 @@
 		<script src="js/main.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0eBACw3HV2GbFMt2wcjcblg-UDMM-DuI&libraries=places&callback=initMap"></script>
 
+		<script>
+			window.onload = function() {
+			    var src = document.getElementById("tocopy"),
+			        dst = document.getElementById("place-input");
+			    src.addEventListener('input', function() {
+			        dst.value = src.value;
+			    });
+			};
+
+			function closeNav() {
+			    document.getElementById("mysidenav").style.width = "0px";
+			    document.getElementById("section-id").style.width = "100%";
+			}
+
+			function openNav() {
+			    document.getElementById("mysidenav").style.width = "35%";
+			    document.getElementById("section-id").style.width= "100%";
+			}
+		</script>
 		
 	</body>
 </html>

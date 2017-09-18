@@ -12,7 +12,7 @@
 /* general style for the form */
 .nl-form {
 	width: 100%;
-	margin: 0.5em auto 0 auto;
+	margin: 1em auto 0 auto;
 	font-size: 4em;
 	line-height: 1.5;
 }
@@ -63,7 +63,7 @@
 	display: inline-block;
 	color: #2a6648;
 	cursor: pointer;
-	border-bottom: 1px dashed #2a6648;
+	border-bottom: 2px dashed #2a6648;
 }
 
 /* drop-down list / text element */
@@ -215,6 +215,7 @@ input:focus::-ms-input-placeholder {
 /* submit button */
 .nl-submit-wrap {
 	margin-top: 0.4em;
+	margin-bottom: 3em;
 }
 
 .nl-form .nl-submit {
