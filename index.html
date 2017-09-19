@@ -30,7 +30,7 @@
 			</header>
 
 			<div class="main clearfix">
-				<form class="nl-form">
+				<form id="nl-form" class="nl-form">
 					I want to take my dog to
 					<select>
 						<option value="1" selected>any place</option>
@@ -93,7 +93,9 @@
 		    </section> 
 
 		<script src="js/nlform.js"></script>
-		
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
 		<script src="js/modernizr.custom.js"></script>
