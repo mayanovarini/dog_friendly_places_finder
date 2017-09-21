@@ -50,6 +50,10 @@ $('#cafe').click(function() {
     $('#toggle-place').text($('#cafe').text());
 });
 
+$('#any-place').click(function() {
+    $('#toggle-place').text($('#any-place').text());
+});
+
 $("#any-place").hover(
 	function() {
 		$(this).addClass("nl-dd-checked");
