@@ -29,9 +29,22 @@ body {
 	overflow-x: hidden;
 }
 
+#city-autocomplete {
+	z-index: 15;
+}
+
+#browser {
+	position: relative;
+	height: 100vh;
+}
+
 #mysidenav {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     min-width: 0%;
+    z-index: 10;
 }
 
 .sidenav {
@@ -61,9 +74,13 @@ body {
 }
 
 #section-id {
-    margin-left: 0px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+    margin: 0px;
     overflow: hidden;
-    height: 100vh;
 
 }
 
@@ -98,6 +115,10 @@ section span {
 	font-size:20px;
 	z-index: 1;
 	margin-top: .8em;
+}
+
+#back-to-top:hover {
+	color: grey;
 }
 
 section header span:hover {

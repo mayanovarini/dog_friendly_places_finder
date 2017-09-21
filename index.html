@@ -32,14 +32,30 @@
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
 					I want to take my dog to
-					<select>
-						<option value="1" selected>any place</option>
-						<option value="2">a Cafe</option>
-						<option value="3">a Dog Park</option>
-						<option value="4">the Vet</option>
-					</select>
-					
-					in <input type="text" id="city-input" placeholder="any city" data-subline="For example: <em>San Francisco</em> or <em>Berkeley</em>"/>
+					<div id="addHere" class="nl-field nl-dd">
+						<a id="toggle-place" class="nl-field-toggle">any place</a>
+						<ul id="place-options">
+							<li class="nl-dd-checked">any place</li>
+							<li>a Cafe</li>
+							<li>a Dog park</li>
+							<li>the Vet</li>
+						</ul>
+					</div>
+				
+
+					in 
+
+					<div class="nl-field nl-ti-text">
+						<a id="toggle-city" class="nl-field-toggle">any city</a>
+						<ul id="city-autocomplete">
+							<li class="nl-ti-input">
+								<input type="text" id="city-input" placeholder="any city">
+								<button class="nl-field-go">Go</button>
+							</li>
+							<li class="nl-ti-example">"For example: "<em>San Francisco</em> or <em>Berkeley</em></li>
+						</ul>
+					</div>
+				
 					<div class="nl-submit-wrap">
 						<button class="nl-submit" type="submit" id="add-location"><a href="#top">Find a place</a></button>
 					</div>
@@ -47,7 +63,7 @@
 				</form>
 			</div>	
 		</div><!-- /container demo -->
-
+		<div id="browser">
 		    <nav class="sidenav" id="mysidenav">
 		      <a id="x-button" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		      <ul style="list-style: none">
@@ -56,7 +72,7 @@
 		          <div class="input-group">
 		          	<form>
 					<input type="text" type="submit" id="place-input" placeholder="Where do you want to take your pet to?">
-					<button display="none" type="submit">Find </button>
+					<button display="none" type="submit" id="add-location-sidebar">Find </button>
 					</form>
 		          </div>
 		        </form>
@@ -91,12 +107,11 @@
 
 		    	</div> <!-- / map-area -->
 		    </section> 
+		</div>
 
-		<script src="js/nlform.js"></script>
-		<script>
-			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-		</script>
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 		<script src="js/modernizr.custom.js"></script>
 
@@ -105,17 +120,9 @@
 		<script src="js/main.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0eBACw3HV2GbFMt2wcjcblg-UDMM-DuI&libraries=places&callback=initMap"></script>
 
-		<script>
-			function closeNav() {
-			    document.getElementById("mysidenav").style.width = "0px";
-			    document.getElementById("section-id").style.width = "100%";
-			}
+		<script src="js/extra.js"></script>
 
-			function openNav() {
-			    document.getElementById("mysidenav").style.width = "35%";
-			    document.getElementById("section-id").style.width= "100%";
-			}
-		</script>
+
 		
 	</body>
 </html>

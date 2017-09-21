@@ -17,13 +17,20 @@ function initMap() {
   service.textSearch(request, callback);
 
   // autocomplete search function
-  var placeInput = document.getElementById('city-input');
-  var autocomplete = new google.maps.places.Autocomplete(placeInput);
   var place;
+
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('city-input'));
 
   autocomplete.bindTo('bounds', map);
   autocomplete.addListener('place_changed', function() {
     place = autocomplete.getPlace();
+  });
+
+  var autocompleteSidebar = new google.maps.places.Autocomplete(document.getElementById('place-input'));
+
+  autocompleteSidebar.bindTo('bounds', map);
+  autocompleteSidebar.addListener('place_changed', function() {
+    place = autocompleteSidebar.getPlace();
   });
 
   $(document).on("click",'#add-location', function(e){
@@ -49,6 +56,30 @@ function initMap() {
       }
   });
 
+
+
+   $(document).on("click",'#add-location-sidebar', function(e){
+        e.preventDefault();
+
+        // if place has no geometry, it is not what we expected (or need)
+        // so we break out with a return statement
+        if (! place.geometry) {
+          return;
+        }
+
+        // if place has a viewport property within gometry property
+        // we use that to set our map view
+        else if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        }
+
+        // if no viewort property, we use location to set our map view
+        // and specify a zoom of 17
+        else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(17);
+        }
+    });
 
   // geolocate users and attach user-icons
   var image_user = "https://s26.postimg.org/jipu86irt/girl.png";

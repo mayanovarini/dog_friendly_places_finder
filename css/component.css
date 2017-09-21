@@ -9,6 +9,12 @@
 	font-style: normal;
 }
 
+.pac-container {
+	z-index: 10000;
+	top: 680px;
+	margin-top: 3em;
+}
+
 /* general style for the form */
 .nl-form {
 	width: 100%;
@@ -258,7 +264,7 @@ input:focus::-ms-input-placeholder {
 	height: 100%;
 	background: rgba(0,0,0,0.5);
 	opacity: 0;
-	z-index: 9999;
+	z-index: 10;
 	visibility: hidden;
 	-webkit-transition: visibility 0s 0.3s, opacity 0.3s;
 	-moz-transition: visibility 0s 0.3s, opacity 0.3s;
