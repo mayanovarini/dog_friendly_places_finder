@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 $('#city-submit').click(function() {
 	if ( $('#city-input').val().length > 0) {
-		$('#toggle-city').text($('#city-input').val());
+		$('#toggle-city').text($('#city-input').val().split(',')[0]);
 	} else {
 		$('#toggle-city').text("any city");
 	}
