@@ -38,16 +38,12 @@ $(document).ready(function(){
 });
 
 $('#city-input').change(function() {
-    $('#toggle-city').val($(this).val());
+    $('#toggle-city').text($(this).val());
 });
 
-$("city-input").keyup(function(){
-	update();
-});
-
-function update() {
-	$("#toggle-city").val($('#city-input').val());
-}
+$('#city-submit').click(function() {
+    $('#toggle-city').text($('#city-input').val());
+})
 
 function closeNav() {
     document.getElementById("mysidenav").style.width = "0px";
