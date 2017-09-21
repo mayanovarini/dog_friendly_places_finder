@@ -30,15 +30,15 @@
 			</header>
 
 			<div class="main clearfix">
-				<form id="nl-form" class="nl-form">
+				<form id="main-form" class="nl-form">
 					I want to take my dog to
 					<div id="addHere" class="nl-field nl-dd">
 						<a id="toggle-place" class="nl-field-toggle">any place</a>
 						<ul id="place-options">
-							<li class="nl-dd-checked">any place</li>
-							<li>a Cafe</li>
-							<li>a Dog park</li>
-							<li>the Vet</li>
+							<li id="any-place">any place</li>
+							<li id="cafe">a Cafe</li>
+							<li id="dog-park">a Dog park</li>
+							<li id="vet">the Vet</li>
 						</ul>
 					</div>
 				
@@ -50,7 +50,7 @@
 						<ul id="city-autocomplete">
 							<li class="nl-ti-input">
 								<input type="text" id="city-input" placeholder="any city">
-								<button class="nl-field-go">Go</button>
+								<button id="city-submit" class="nl-field-go">Go</button>
 							</li>
 							<li class="nl-ti-example">"For example: "<em>San Francisco</em> or <em>Berkeley</em></li>
 						</ul>
@@ -72,7 +72,7 @@
 		          <div class="input-group">
 		          	<form>
 					<input type="text" type="submit" id="place-input" placeholder="Where do you want to take your pet to?">
-					<button display="none" type="submit" id="add-location-sidebar">Find </button>
+					<button type="submit" id="add-location-sidebar">Find</button>
 					</form>
 		          </div>
 		        </form>

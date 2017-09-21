@@ -1,10 +1,3 @@
-$('#city-input').keyup(function(){
-	update();
-});
-
-function update() {
-	$('#toggle-place').val($('#city-input').val());
-}
 
 $(document).ready(function(){
 	$('#toggle-place').click(function() {
@@ -14,6 +7,13 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$('.nl-overlay').click(function() {
+	    $(".nl-field-open").removeClass('nl-field-open');
+	});
+});
+
+
+$(document).ready(function(){
+	$('#place-options').click(function() {
 	    $(".nl-field-open").removeClass('nl-field-open');
 	});
 });
@@ -41,9 +41,60 @@ $('#city-input').change(function() {
     $('#toggle-city').text($(this).val());
 });
 
+
 $('#city-submit').click(function() {
     $('#toggle-city').text($('#city-input').val());
-})
+});
+
+$('#cafe').click(function() {
+    $('#toggle-place').text($('#cafe').text());
+});
+
+$("#any-place").hover(
+	function() {
+		$(this).addClass("nl-dd-checked");
+	}, 
+	function() {
+		$(this).removeClass("nl-dd-checked");
+	}
+);
+
+
+$("#cafe").hover(
+	function() {
+		$(this).addClass("nl-dd-checked");
+	}, 
+	function() {
+		$(this).removeClass("nl-dd-checked");
+	}
+);
+
+$("#dog-park").hover(
+	function() {
+		$(this).addClass("nl-dd-checked");
+	}, 
+	function() {
+		$(this).removeClass("nl-dd-checked");
+	}
+);
+
+$("#vet").hover(
+	function() {
+		$(this).addClass("nl-dd-checked");
+	}, 
+	function() {
+		$(this).removeClass("nl-dd-checked");
+	}
+);
+
+
+$('#dog-park').click(function() {
+    $('#toggle-place').text($('#dog-park').text());
+});
+
+$('#vet').click(function() {
+    $('#toggle-place').text($('#vet').text());
+});
 
 function closeNav() {
     document.getElementById("mysidenav").style.width = "0px";

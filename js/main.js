@@ -56,6 +56,53 @@ function initMap() {
       }
   });
 
+  $(document).on("click",'#city-submit', function(e){
+      e.preventDefault();
+
+      // if place has no geometry, it is not what we expected (or need)
+      // so we break out with a return statement
+      if (! place.geometry) {
+        return;
+      }
+
+      // if place has a viewport property within gometry property
+      // we use that to set our map view
+      else if (place.geometry.viewport) {
+        map.fitBounds(place.geometry.viewport);
+      }
+
+      // if no viewort property, we use location to set our map view
+      // and specify a zoom of 17
+      else {
+        map.setCenter(place.geometry.location);
+        map.setZoom(17);
+      }
+  });
+
+  $(document).on("keyup",'#city-input', function(e){
+      e.preventDefault();
+
+      // if place has no geometry, it is not what we expected (or need)
+      // so we break out with a return statement
+      if (! place.geometry) {
+        return;
+      }
+
+      // if place has a viewport property within gometry property
+      // we use that to set our map view
+      else if (place.geometry.viewport) {
+        map.fitBounds(place.geometry.viewport);
+      }
+
+      // if no viewort property, we use location to set our map view
+      // and specify a zoom of 17
+      else {
+        map.setCenter(place.geometry.location);
+        map.setZoom(17);
+      }
+  });
+
+
 
 
    $(document).on("click",'#add-location-sidebar', function(e){
