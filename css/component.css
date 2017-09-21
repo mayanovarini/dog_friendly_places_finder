@@ -20,10 +20,12 @@
 
 /* general style for the form */
 .nl-form {
-	width: 100%;
+	width: 110%;
 	margin: 1em auto 0 auto;
+	padding-right: 1em;
 	font-size: 4em;
 	line-height: 1.5;
+	text-align: center;
 }
 
 .nl-form ul {
