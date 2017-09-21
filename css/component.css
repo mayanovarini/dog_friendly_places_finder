@@ -15,6 +15,10 @@
 	margin-top: 3em;
 }
 
+.pac-item {
+	font-family: 'Quicksand', sans-serif;
+}
+
 /* general style for the form */
 .nl-form {
 	width: 100%;
