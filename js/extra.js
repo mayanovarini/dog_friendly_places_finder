@@ -37,13 +37,13 @@ $(document).ready(function(){
 	});
 });
 
-$('#city-input').change(function() {
-    $('#toggle-city').text($(this).val());
-});
-
 
 $('#city-submit').click(function() {
-    $('#toggle-city').text($('#city-input').val());
+	if ( $('#city-input').val().length > 0) {
+		$('#toggle-city').text($('#city-input').val());
+	} else {
+		$('#toggle-city').text("any city");
+	}
 });
 
 $('#cafe').click(function() {
