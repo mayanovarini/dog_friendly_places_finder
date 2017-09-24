@@ -61,7 +61,9 @@ body {
 .sidenav #x-button {
 	float:right; 
 	font-size:47px; 
-	margin-top: -16px
+	margin-left: 5px;
+	margin-right: 9px;
+	margin-top: 4px;
 }
 
 .sidenav #x-button:hover {
@@ -210,8 +212,90 @@ a:active {
 }
 
 #weather-display {
-	font-size : 2em;
+	font-size : 1.5em;
+	margin-right: 1.5em;
+	margin-top: -.3em;
 }
+
+#weather-image {
+	margin: 1em;
+}
+
+.find input[type="text"] {
+  margin-bottom: 1em;
+  margin-left: -1.2em;
+  width: 77%;
+  font-size: 18px;
+  color: #707070;
+  padding: 10px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+
+#add-location-sidebar {
+  background: #c1bf17;
+  color: white;
+  width: 15%;
+  height: 42px;
+  border: 0;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: .6s;
+  transition: .6s;
+  overflow: hidden;
+}
+#add-location-sidebar:focus {
+  outline: 0;
+}
+#add-location-sidebar:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: .5;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  -webkit-transform: translateX(-100px) skewX(-15deg);
+          transform: translateX(-100px) skewX(-15deg);
+}
+#add-location-sidebar:after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px;
+  height: 100%;
+  left: 30px;
+  top: 0;
+  opacity: 0;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: translateX(-100px) skewX(-15deg);
+          transform: translateX(-100px) skewX(-15deg);
+}
+#add-location-sidebar:hover {
+  background: #338033;
+}
+#add-location-sidebar:hover:before {
+  -webkit-transform: translateX(300px) skewX(-15deg);
+          transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+#add-location-sidebar:hover:after {
+  -webkit-transform: translateX(300px) skewX(-15deg);
+          transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
 
 @media screen and (max-width: 25em) {
 
