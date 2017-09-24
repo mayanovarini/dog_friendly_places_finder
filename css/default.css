@@ -209,6 +209,9 @@ a:active {
 	max-width: 50em;
 }
 
+#weather-display {
+	font-size : 2em;
+}
 
 @media screen and (max-width: 25em) {
 
