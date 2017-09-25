@@ -7,7 +7,7 @@ var illustrations = {
 						"heavy intensity rain" : "https://s26.postimg.org/mafykeyix/umbrellas_1.png",
 						"very heavy rain" : "https://s26.postimg.org/5nyebc5l5/umbrella_1.png",
 						"overcast clouds" : "https://s26.postimg.org/jj1a7jpe1/clouds_3.png",
-						"clear sky" : "https://s26.postimg.org/cdel27mmh/moon.png",
+						"clear sky" : "https://s26.postimg.org/655pf9qvd/parachute.png",
 						"snow" : "https://s26.postimg.org/cv4oky5vt/snow_2.png",
 						"light snow" : "https://s26.postimg.org/xtauj15qh/snow_3.png",
 						"mist" : "https://s26.postimg.org/ulpnrpavd/mist_1.png",
@@ -31,13 +31,11 @@ function gotData(weather) {
 	var pic = illustrations[status];
 	var input = $('#place-input');
 
-	if (weather.dt <= weather.sys.sunset && weather.dt > weather.sys.sunrise && (status == "clear sky")) {
-		pic = "https://s26.postimg.org/iusfolqo9/sun_1.png";	
-	}
 
 	$('#weather-image').attr("src", pic);
 
 	$('#weather-display').html("It is now " + weather.main.temp + "&#8451; with " + status + " in " + input.val());
+	console.log(weather.dt, weather.sys.sunrise, weather.sys.sunset)
 
 }
 
