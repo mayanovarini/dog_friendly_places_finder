@@ -13,8 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" href="css/checkbox.css">
 		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-
-		
+		<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 	</head>
 	<body class="nl-blurred">
 		<div id="two" class="container demo-1">		
@@ -33,105 +32,91 @@
 			<div class="main clearfix">
 				<form id="main-form" class="nl-form">
 					I want to take my dog to
-					<div id="addHere" class="nl-field nl-dd">
+					<div id="type-chooser" class="nl-field nl-dd">
 						<a id="toggle-place" class="nl-field-toggle">any place</a>
 						<ul id="place-options">
-							<li id="any-place">any place</li>
-							<li id="cafe">a Cafe</li>
-							<li id="dog-park">a Dog park</li>
-							<li id="vet">the Vet</li>
+							<li id="type-any">any place</li>
+							<li id="type-cafe">a Cafe</li>
+							<li id="type-park">a Dog park</li>
+							<li id="type-vet">the Vet</li>
 						</ul>
 					</div>
-				
 
 					in 
 
-					<div class="nl-field nl-ti-text">
+					<div id="city-chooser" class="nl-field nl-ti-text">
 						<a id="toggle-city" class="nl-field-toggle">any city</a>
 						<ul id="city-autocomplete">
 							<li class="nl-ti-input">
-								<input type="text" id="city-input" placeholder="any city">
-								<button id="city-submit" class="nl-field-go"></button>
+								<input type="text" id="city-input" placeholder="any city"/>
+								<button id="city-submit" type="submit" class="nl-field-go"></button>
 								<li class="nl-ti-example">"For example: "<em>San Francisco</em> or <em>Berkeley</em></li>
 							</li>
 						</ul>
 					</div>
 				
 					<div class="nl-submit-wrap">
-						<button class="nl-submit" type="submit" id="add-location"><a href="#top">Find a place</a></button>
+						<button class="nl-submit" type="submit" id="add-location">Find a place</button>
 					</div>
+
 					<div class="nl-overlay"></div>
 				</form>
 			</div>	
-		</div><!-- /container demo -->
+		</div>
+
 		<div id="browser">
-		    <nav class="sidenav" id="mysidenav">
-		      <a id="x-button" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		      <ul style="list-style: none">
+			<nav class="sidenav" id="mysidenav">
+			  <a id="x-button" href="javascript:void(0)" class="closebtn">&times;</a>
+			  <ul style="list-style: none">
+				<form class="form-inline" id="sidebar-form">
+					<div class="find">
+						<input type="text" type="submit" id="place-input" placeholder="Where do you want to take your pet to?">
+						<button type="submit" id="add-location-sidebar">Find</button>
+					</div>
+				</form>
 
-		        <form class="form-inline">
-		          <div class="find">
-		          	<form>
-					<input type="text" type="submit" id="place-input" placeholder="Where do you want to take your pet to?">
-					<button type="submit" id="add-location-sidebar">Find</button>
-					</form>
-		          </div>
-		        </form>
+				<div id="link-hover">
+					<div id="weather-box">
+						<div id="weather-display"></div>
+						<img width="25%" id="weather-image" />
+					</div>
 
-		        <div id="link-hover">
-		        	<div id="weather-box">
-				      <div id="weather-display">
-				      	 <img width="15%" style="float:left; margin-right: -2em" src="https://s26.postimg.org/blsyne9mx/temperature_1.png" />
-				      	 <p style="font-size: 1.1em; margin-left: 2.3em; padding-top: .3em; position:relative;">Check the weather before you go!</p>
-				      </div>
-
-				      <img width="25%" id="weather-image" />
-				  	</div>
-
-				  <li><a href="#">list of places</a></li>
-				  	<ul style="list-style: none">
-					  <li><a href="#">Clients</a></li>
-					  <li><a href="#">Contact</a><li>
+					<li id="places-result"></li>
+					
+					<ul style="list-style: none">
+						<li><a href="#">Clients</a></li>
+						<li><a href="#">Contact</a><li>
 					</ul>
-		    	</div>
-		      </ul>
-		    </nav> <!-- /sidenav needs to be pushed slide to the right into the map-->
+				</div>
+			  </ul>
+			</nav>
 
-		    <section id="section-id">
-		    	<header>
-		    		<span id="top" onclick="openNav()">&#9776; 
-		    		</span>
-		    		<a id="back-to-top" href="#two">Back to the top</a>			
-			    </header>
+			<section id="section-id">
+				<header>
+					<span id="burger">&#9776;</span>
+					<a id="back-to-top" href="#two">Back to the top</a>			
+				</header>
 
-		    	<div id="map-area">
-		     
-		      		<div id="map"></div>
-		      
-			      <div id="infowindow-content">
-			        <img src="" width="16" height="16" id="place-icon">
-			        <span id="place-name"  class="title"></span><br>
-			      </div>
-
-		    	</div> <!-- / map-area -->
-		    </section> 
+				<div id="map-area">
+					<div id="map"></div>
+					<div id="infowindow-content">
+						<img src="" width="16" height="16" id="place-icon">
+						<span id="place-name"  class="title"></span><br>
+					</div>
+				</div>
+			</section> 
 		</div>
 
 		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="js/weather.js"></script>
-	
-
 		<script src="js/modernizr.custom.js"></script>
-
 		<script src="js/scroll.js"></script>
-
-		<script src="js/main.js"></script>
+		<script src="js/map.js"></script>
+		
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0eBACw3HV2GbFMt2wcjcblg-UDMM-DuI&libraries=places&callback=initMap"></script>
 
-		<script src="js/extra.js"></script>
-
-
+		<script src="js/ready.js"></script>
 		
 	</body>
 </html>

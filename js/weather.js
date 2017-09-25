@@ -15,37 +15,32 @@ var illustrations = {
 						"fog" : "https://s26.postimg.org/amhbc4k09/cloudy_3.png",
 					};
 
-
-
-function getWeather() {
+function getWeather(query) {
 	var api = "http://api.openweathermap.org/data/2.5/weather?q=";
 	var apiKey = "&appid=b3554b3ceaa4a5a7d8af7e151bbec70c";
 	var unit = "&units=metric"
-	var input = $('#place-input');
-	var url = api + input.val() + unit + apiKey;
-	$.get(url, gotData);
-}
 
-function gotData(weather) {
-	var status = weather.weather[0].description;
-	var pic = illustrations[status];
-	var input = $('#place-input');
+	var url = api + query + unit + apiKey;
 
+	$.get(url, function (weather) {
+		var status = weather.weather[0].description;
+		var pic = illustrations[status];
 
-	$('#weather-image').attr("src", pic);
+		$('#weather-image').attr("src", pic);
 
-	$('#weather-display').html("It is now " + weather.main.temp + "&#8451; with " + status + " in " + input.val());
-
+		$('#weather-display').html("It is now " + weather.main.temp + "&#8451; with " + status + " in " + query.split(',')[0]);
+	});
 }
 
 $(document).ready(function() {
 	$('#add-location-sidebar').click(function() {
-		getWeather();
+		getWeather($('#place-input').val());
 	});
 
-	$('#add-location').click(function() {
+	$('#main-form').submit(function() {
 		if ( $('#city-input').val().length > 0) {
-			getWeather();
+			$('#place-input').val($('#city-input').val());
+			getWeather($('#city-input').val());
 		}
 	});
 });
