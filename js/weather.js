@@ -35,7 +35,6 @@ function gotData(weather) {
 	$('#weather-image').attr("src", pic);
 
 	$('#weather-display').html("It is now " + weather.main.temp + "&#8451; with " + status + " in " + input.val());
-	console.log(weather.dt, weather.sys.sunrise, weather.sys.sunset)
 
 }
 

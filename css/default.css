@@ -46,6 +46,8 @@ body {
     height: 100%;
     min-width: 0%;
     z-index: 10;
+    background-color: #BA5085;
+    color: white;
 }
 
 .sidenav {
@@ -214,7 +216,12 @@ a:active {
 #weather-display {
 	font-size : 1.5em;
 	margin-right: 1.5em;
+	background-color: grey;
 	margin-top: -.3em;
+	margin-left: -1em;
+	margin-right: 1em;
+	padding-left: 10px;
+	padding-bottom: 3em;
 }
 
 #weather-image {
@@ -279,7 +286,7 @@ a:active {
           transform: translateX(-100px) skewX(-15deg);
 }
 #add-location-sidebar:hover {
-  background: #338033;
+  background: #66650c;
 }
 #add-location-sidebar:hover:before {
   -webkit-transform: translateX(300px) skewX(-15deg);
