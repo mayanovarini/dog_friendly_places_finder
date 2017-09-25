@@ -1,5 +1,5 @@
 var illustrations = {
-						"broken clouds" : "https://s26.postimg.org/7xmim3eix/cloudy_4.png",
+						"broken clouds" : "https://s26.postimg.org/svp1wpzd5/cloudy_6.png",
 						"scattered clouds" : "https://s26.postimg.org/o9wkbtsuh/clouds_2.png",
 						"few clouds" : "https://s26.postimg.org/6xw7qdzd5/cloudy_5.png",
 						"light rain" : "https://s26.postimg.org/xk8ofd3k9/rain_1.png",
@@ -13,6 +13,7 @@ var illustrations = {
 						"mist" : "https://s26.postimg.org/ulpnrpavd/mist_1.png",
 						"haze" : "https://s26.postimg.org/nfa0pskzt/fog_1.png",
 						"fog" : "https://s26.postimg.org/amhbc4k09/cloudy_3.png",
+						"thunderstorm" : "https://s26.postimg.org/3kkcg7qrt/storm_2.png"
 					};
 
 function getWeather(query) {

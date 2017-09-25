@@ -53,6 +53,13 @@ $(document).ready(function(){
 		}
 	);
 
+	$("#mysidenav").hover(function(){
+    	$('#map-area').animate({'opacity': '0.5'}, 100);
+	}, function(){
+	    $('#map-area').animate({'opacity': '1'}, 100);   
+	});
+
+
 	$('#burger').click(openNav);
 	$('#x-button').click(closeNav);
 });

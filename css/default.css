@@ -24,7 +24,7 @@ body {
 	margin: 0px;
 	text-align: center;
 	color: #ffe8e7;
-	background: #50ba85;
+	background: #8fcaac;
 	font-weight: 300;
 	overflow-x: hidden;
 }
@@ -46,7 +46,7 @@ body {
     height: 100%;
     min-width: 0%;
     z-index: 10;
-    background-color: #BA5085;
+    background-color: #ca8f90;
     color: white;
 }
 
@@ -104,9 +104,8 @@ body {
 }
 
 section header {
-	padding:0em; 
-	height:80px;
-	margin-bottom: -1.5em; 
+	padding: 8px; 
+	height: 72px;
 	z-index: -1; 
 	clear:left;
 	background: white;
@@ -122,6 +121,14 @@ section header {
 	color:#c1bf17;
 	z-index: -1;
 	margin-right: 8px;
+}
+
+#places-result {
+	font-size: 20px;
+	line-height: 2em;
+	color: white;
+	padding: .5em;
+	text-align: left;
 }
 
 #back-to-top {
@@ -230,9 +237,8 @@ a:active {
 }
 
 #weather-box {
-	background-color: #f2f2f2;
+	background-color: #fafcfb;
 	margin-left: -3em;
-	opacity: .9;
 	padding:1em;
 	padding-top: .4em;
 
@@ -251,7 +257,7 @@ a:active {
   margin-left: -2em;
   width: 77%;
   font-size: 18px;
-  color: #707070;
+  color: #150a10;
   padding: 10px;
   border: solid 1px #fff;
   box-shadow: inset 1px 1px 2px 0 #707070;
@@ -319,7 +325,7 @@ a:active {
           transform: translateX(-100px) skewX(-15deg);
 }
 #add-location-sidebar:hover {
-  background: #66650c;
+  background: #a84f7c;
 }
 #add-location-sidebar:hover:before {
   -webkit-transform: translateX(300px) skewX(-15deg);
