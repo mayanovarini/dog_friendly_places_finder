@@ -17,7 +17,7 @@ var illustrations = {
 					};
 
 function getWeather(query) {
-	var api = "http://api.openweathermap.org/data/2.5/weather?q=";
+	var api = "https://api.openweathermap.org/data/2.5/weather?q=";
 	var apiKey = "&appid=b3554b3ceaa4a5a7d8af7e151bbec70c";
 	var unit = "&units=metric"
 
