@@ -253,6 +253,23 @@ a:active {
 
 #weather-image {
 	margin: 1em 1em 0;
+   	top:100px;
+   	left:100px; 
+   	text-indent: 90px;
+    transform-origin: center top;
+    -webkit-animation: dangle 10s infinite;
+}
+
+@-webkit-keyframes dangle {
+    0% { -webkit-transform: rotate(30deg); }
+    10% { -webkit-transform: rotate(-28deg); }
+    20% { -webkit-transform: rotate(26deg); }
+    30% { -webkit-transform: rotate(-24deg); }
+    40% { -webkit-transform: rotate(22deg); }
+    50% { -webkit-transform: rotate(-20deg); }
+    60% { -webkit-transform: rotate(18deg); }
+    70% { -webkit-transform: rotate(-16deg); }
+    80% { -webkit-transform: rotate(12deg); }
 }
 
 .find {

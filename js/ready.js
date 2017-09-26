@@ -61,6 +61,8 @@ $(document).ready(function(){
 
 
 	$('#burger').click(openNav);
+
+
 	$('#x-button').click(closeNav);
 });
 
