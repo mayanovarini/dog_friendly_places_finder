@@ -158,12 +158,14 @@ section header {
 
 #places-result .name {
 	font-weight: bold;
-	display: inline;
+	display: block;
 	margin-right: 5px;
 }
 
 #places-result .rating {
-	display: inline;
+	font-size: 16px;
+	display: block;
+	color: grey;
 }
 
 #places-result .hours {

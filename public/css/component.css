@@ -122,7 +122,8 @@
 .nl-dd ul li.nl-dd-checked:before,
 .nl-submit:before,
 .nl-field-go:before {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'FontAwesome';
+	content: "\f060";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -132,11 +133,12 @@
 }
 
 .nl-dd ul li.nl-dd-checked:before {
-	content: "\e000";
+	content: "\f060";
 	position: absolute;
 	right: 1em;
 	font-size: 50%;
 	line-height: 3;
+	font-family: 'FontAwesome';
 }
 
 .nl-ti-text ul {
@@ -163,7 +165,7 @@
 }
 
 .nl-field-go:before {
-	content: "\e001";
+	content: "\f061";
 	font-size: 75%;
 	color: #fff;
 	width: 100%;
@@ -233,12 +235,13 @@ input:focus::-ms-input-placeholder {
 }
 
 .nl-submit:before {
-	content: "\e001";
+	content: "\f061";
 	color: #fff;
 	float: left;
 	padding: 0 0.7em;
 	margin: 0 0.8em 0 0;
 	background: #999712;
+	font-family: 'FontAwesome';
 }
 
 .no-touch .nl-form .nl-submit:hover,

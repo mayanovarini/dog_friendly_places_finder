@@ -96,12 +96,13 @@ function initMap() {
 					$('<li>').append(
 						$ul
 							.append($('<li class="name">').text(place.name))
-							.append($('<li class="rating">').text("(" + place.rating + ")"))
+							.append($('<li class="rating">').text("Rating : " + place.rating + " out of 5"))
 							.append($('<li class="address">').text(place.formatted_address))
 							.append($('<li class="hours">').text(place.opening_hours.open_now ? "Open" : "Closed"))
 							.click(function(){
-								var infowindowContent = document.getElementById('infowindow-content');
-								infowindowContent.children['place-name'].textContent = this.place.name;
+								//var infowindowContent = document.getElementById('infowindow-content');
+								//infowindowContent.children['place-name'].textContent = this.place.name;
+								infowindow.setContent($('<span id="place-name">').text(this.place.name)[0]);
 								infowindow.open(map, this.marker);
 							}.bind({ place: place, marker: marker }))
 					));
