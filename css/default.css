@@ -67,15 +67,14 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-
+    position: relative;
 }
 
 .sidenav #x-button {
-	float:right; 
+	position: absolute;
+	top: 6px;
+	right: 11px;
 	font-size:47px; 
-	margin-left: 12px;
-	margin-right: 10px;
-	margin-top: 4px;
 	color: #d6ca64;
 
 }
@@ -147,7 +146,41 @@ section header {
 	text-align: left;
 	color: #3e3910;
 	overflow: scroll;
-	height: 23em;
+	height: 24em;
+	list-style: none;
+}
+
+#places-result ul {
+	list-style: none;
+	cursor: pointer;
+	padding: 10px 125px 10px 10px;
+	position: relative;
+	border-bottom: 1px dotted grey;
+}
+
+#places-result ul img {
+	position: absolute;
+	top: calc(50% - 60px);
+	right: 0;
+}
+
+#places-result ul:hover {
+	background-color: #eee;
+}
+
+#places-result .name {
+	font-weight: bold;
+	display: inline;
+	margin-right: 5px;
+}
+
+#places-result .rating {
+	display: inline;
+}
+
+#places-result .hours {
+	font-size: 13px;
+	color: grey;
 }
 
 #back-to-top {
@@ -198,7 +231,7 @@ section header a:hover {
   text-transform: uppercase;
   font-size: 36px;
   font-weight: bold;
-  height: 93.5vh;
+  height: 91.5vh;
   display: block;
   position: relative;
 }
@@ -258,8 +291,6 @@ a:active {
 
 #weather-box {
 	background-color: #f0f7f6;
-	margin-left: -3em;
-	margin-bottom: 2em;
 	padding:1em;
 	box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.3);
 }
@@ -286,19 +317,24 @@ a:active {
 }
 
 .find {
-	margin-right: 0;
+	padding-right: 30px;
+	padding-top: .9em;
+	height: 80px;
+	text-align: left;
+	margin-bottom: -6px;
 }
 
 .find input[type="text"] {
-  margin-bottom: .9em;
-  margin-left: -2em;
-  width: 77%;
-  font-size: 18px;
-  color: #3b806b;
-  padding: 10px;
-  border: solid 1px #fff;
-  box-shadow: inset 1px 1px 1px 1px #707070;
-  transition: box-shadow 0.3s;
+	width: 75%;
+	font-size: 18px;
+	color: #3b806b;
+	padding: 10px;
+	margin-left: 10px;
+	border: solid 1px #fff;
+	box-shadow: inset 1px 1px 1px 1px #707070;
+	transition: box-shadow 0.3s;
+	height: 2.5em;
+	margin-right: 5px;
 }
 
 #message {
@@ -327,7 +363,6 @@ a:active {
   transition: .6s;
   overflow: hidden;
   margin-right: -1px;
-  float:right;
 }
 #add-location-sidebar:focus {
   outline: 0;

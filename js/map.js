@@ -37,6 +37,7 @@ function initMap() {
 	autocompleteSidebar.addListener('place_changed', function() {
 		place = autocompleteSidebar.getPlace();
 		getWeather(place.name);
+		mapSearch();
 	});
 
 	$(document).on("submit",'#main-form', mapSearch);
@@ -55,7 +56,7 @@ function initMap() {
 	}
 
 	function setMapGeometry(e) {
-		e.preventDefault();
+		if (e) e.preventDefault();
 
 		// if place has no geometry, it is not what we expected (or need)
 		// so we break out with a return statement
@@ -77,17 +78,39 @@ function initMap() {
 		}
 	}
 
+	var infowindow = new google.maps.InfoWindow;
+	var markers = [];
+
 	function callback(results, status) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(null);
+		}
+		markers = [];
 		$('#places-result').html('');
 		if (status === google.maps.places.PlacesServiceStatus.OK) {
 			for (var i = 0; i < results.length; i++) {
-				createMarker(results[i]);
-				$('#places-result').append($('<li>').text(results[i].name))
+				var marker = createMarker(results[i]);
+				var place = results[i];
+				var $ul = $('<ul>');
+				$('#places-result').append(
+					$('<li>').append(
+						$ul
+							.append($('<li class="name">').text(place.name))
+							.append($('<li class="rating">').text("(" + place.rating + ")"))
+							.append($('<li class="address">').text(place.formatted_address))
+							.append($('<li class="hours">').text(place.opening_hours.open_now ? "Open" : "Closed"))
+							.click(function(){
+								var infowindowContent = document.getElementById('infowindow-content');
+								infowindowContent.children['place-name'].textContent = this.place.name;
+								infowindow.open(map, this.marker);
+							}.bind({ place: place, marker: marker }))
+					));
+				if (place.photos.length > 0) {
+					$ul.append($('<li class="image">').append($('<img>').attr("src", place.photos[0].getUrl({'maxWidth': 120, 'maxHeight': 120}))))
+				}
 			}
 		}
 	}
-
-	var infowindow = new google.maps.InfoWindow;
 
 	function createMarker(place) {
 		var infowindowContent = document.getElementById('infowindow-content');
@@ -105,6 +128,10 @@ function initMap() {
 			infowindowContent.children['place-name'].textContent = place.name;
 			infowindow.open(map, this);
 		});
+
+		markers.push(marker);
+
+		return marker;
 	}
 
 } // map init close tag

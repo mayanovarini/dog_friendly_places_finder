@@ -24,7 +24,6 @@ $(document).ready(function(){
 	$('#main-form').submit(function(e) {
 		e.preventDefault();
 
-		console.log("submitted");
 		if ( $('#city-input').val().length > 0) {
 			$('#toggle-city').text($('#city-input').val().split(',')[0]);
 		} else {
@@ -52,13 +51,6 @@ $(document).ready(function(){
 			$(this).removeClass("nl-dd-checked");
 		}
 	);
-
-	$("#mysidenav").hover(function(){
-    	$('#map-area').animate({'opacity': '0.5'}, 100);
-	}, function(){
-	    $('#map-area').animate({'opacity': '1'}, 100);   
-	});
-
 
 	$('#burger').click(openNav);
 
