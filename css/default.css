@@ -27,6 +27,14 @@ body {
 	background: #57b195;
 	font-weight: 300;
 	overflow-x: hidden;
+	overflow-y: hidden;
+
+}
+
+#logo {
+	width:280px; 
+	height:auto;
+	margin-right: 3.7em;
 }
 
 #city-autocomplete {
@@ -107,6 +115,10 @@ body {
 	margin-top: 5px;
 }
 
+#burger:hover {
+	color: grey;
+}
+
 section header {
 	padding: 8px; 
 	height: 72px;
@@ -134,7 +146,8 @@ section header {
 	padding: .5em;
 	text-align: left;
 	color: #3e3910;
-
+	overflow: scroll;
+	height: 23em;
 }
 
 #back-to-top {
@@ -246,8 +259,8 @@ a:active {
 #weather-box {
 	background-color: #f0f7f6;
 	margin-left: -3em;
+	margin-bottom: 2em;
 	padding:1em;
-	padding-top: .4em;
 	box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.3);
 }
 
@@ -277,7 +290,7 @@ a:active {
 }
 
 .find input[type="text"] {
-  margin-bottom: .8em;
+  margin-bottom: .9em;
   margin-left: -2em;
   width: 77%;
   font-size: 18px;
