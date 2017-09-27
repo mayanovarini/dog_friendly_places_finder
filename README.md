@@ -17,7 +17,7 @@ Create your Firebase project from the Firebase console at https://console.fireba
 
 ### Cloning and Deployment
 
-On your local directory, clone the repo bar repository by running :
+On your local directory, clone the Doggo & Pupper repository by running :
 
 ```
 git clone https://github.com/thegirlfromipanema/dog_friendly_places_finder
