@@ -15,7 +15,6 @@ body {
 	font-weight: 300;
 	overflow-x: hidden;
 	overflow-y: hidden;
-
 }
 
 #logo {
@@ -392,11 +391,3 @@ a:active {
 }
 
 
-
-@media screen and (max-width: 25em) {
-
-	.codrops-icon span {
-		display: none;
-	}
-
-}

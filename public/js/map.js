@@ -1,4 +1,29 @@
+var typeSearch = {
+	query: "dog",
+	type: ""
+};
+
 function initMap() {
+
+
+	$('#type-any').click(function(){
+		typeSearch.query = "dog",
+		typeSearch.type = ""
+	});
+
+	$('#type-cafe').click(function(){
+		typeSearch.query = "dog-friendly",
+		typeSearch.type = "cafe"
+	});
+
+	$('#type-park').click(function(){
+		typeSearch.query = "dog-friendly",
+		typeSearch.type = "park"
+	});
+	$('#type-vet').click(function(){
+		typeSearch.query = "vet",
+		typeSearch.type = "veterinary-care"
+	});
 
 	$('#animated-text').hide();
 
@@ -11,8 +36,8 @@ function initMap() {
 	var request = {
 		location: sf,
 		radius: '10000',
-		query: 'dog-friendly',
-		type: 'cafe'
+		query: typeSearch.query,
+		type: typeSearch.type
 	};
 
 	getWeather("San Francisco, CA");
@@ -45,11 +70,16 @@ function initMap() {
 	$(document).on("submit",'#sidebar-form', mapSearch);
 
 	function mapSearch(e) {
+		if (place) {
+			loc = place.geometry.location;
+		} else {
+			loc = sf;
+		}
 		service.textSearch({
-			location: place.geometry.location,
+			location: loc,
 			radius: '10000',
-			query: 'dog-friendly',
-			type: 'cafe'
+			query: typeSearch.query,
+			type: typeSearch.type
 		}, callback);
 
 		setMapGeometry(e);
@@ -60,7 +90,7 @@ function initMap() {
 
 		// if place has no geometry, it is not what we expected (or need)
 		// so we break out with a return statement
-		if (! place.geometry) {
+		if (!place || !place.geometry) {
 			return;
 		}
 
@@ -98,16 +128,19 @@ function initMap() {
 							.append($('<li class="name">').text(place.name))
 							.append($('<li class="rating">').text("Rating : " + place.rating + " out of 5"))
 							.append($('<li class="address">').text(place.formatted_address))
-							.append($('<li class="hours">').text(place.opening_hours.open_now ? "Open" : "Closed"))
 							.click(function(){
 								//var infowindowContent = document.getElementById('infowindow-content');
 								//infowindowContent.children['place-name'].textContent = this.place.name;
 								infowindow.setContent($('<span id="place-name">').text(this.place.name)[0]);
 								infowindow.open(map, this.marker);
 							}.bind({ place: place, marker: marker }))
+
 					));
-				if (place.photos.length > 0) {
+				if (place.photos && place.photos.length > 0) {
 					$ul.append($('<li class="image">').append($('<img>').attr("src", place.photos[0].getUrl({'maxWidth': 120, 'maxHeight': 120}))))
+				}
+				if (place.opening_hours) {
+					$ul.append($('<li class="hours">').text(place.opening_hours.open_now ? "Open" : "Closed"));
 				}
 			}
 		}
@@ -126,7 +159,7 @@ function initMap() {
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			infowindowContent.children['place-name'].textContent = place.name;
+			infowindow.setContent($('<span id="place-name">').text(place.name)[0]);
 			infowindow.open(map, this);
 		});
 
@@ -134,6 +167,8 @@ function initMap() {
 
 		return marker;
 	}
+
+	
 
 } // map init close tag
 
