@@ -5,7 +5,6 @@ var typeSearch = {
 
 function initMap() {
 
-
 	$('#type-any').click(function(){
 		typeSearch.query = "dog",
 		typeSearch.type = ""

@@ -56,6 +56,7 @@ $(document).ready(function(){
 
 
 	$('#x-button').click(closeNav);
+
 });
 
 function closeNav() {
