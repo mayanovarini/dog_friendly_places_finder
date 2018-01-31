@@ -18,7 +18,7 @@ body {
 }
 
 #logo {
-	width:280px; 
+	width:280px;
 	height:auto;
 	margin-right: 3.7em;
 }
@@ -60,7 +60,7 @@ body {
 	position: absolute;
 	top: 6px;
 	right: 11px;
-	font-size:47px; 
+	font-size:47px;
 	color: #d6ca64;
 
 }
@@ -105,9 +105,9 @@ body {
 }
 
 section header {
-	padding: 8px; 
+	padding: 8px;
 	height: 72px;
-	z-index: -1; 
+	z-index: -1;
 	clear:left;
 	background: white;
 }
@@ -133,7 +133,7 @@ section header {
 	text-align: left;
 	color: #3e3910;
 	overflow: scroll;
-	height: 24em;
+	height: 38em;
 	list-style: none;
 }
 
@@ -173,10 +173,10 @@ section header {
 }
 
 #back-to-top {
-	color:#c1bf17; 
-	float:right; 
+	color:#c1bf17;
+	float:right;
 	font-family: 'Raleway', sans-serif;
-	padding-right: 1em; 
+	padding-right: 1em;
 	font-size:20px;
 	z-index: 1;
 	margin-top: .8em;
@@ -221,7 +221,7 @@ section header a:hover {
   text-transform: uppercase;
   font-size: 36px;
   font-weight: bold;
-  height: 91.5vh;
+  height: 93.5vh;
   display: block;
   position: relative;
 }
@@ -271,6 +271,7 @@ a:active {
 /* Main Content */
 .main {
 	max-width: 50em;
+	height: 60em;
 }
 
 #weather-display {
@@ -288,7 +289,7 @@ a:active {
 #weather-image {
 	margin: 1em 1em 0;
    	top:100px;
-   	left:100px; 
+   	left:100px;
    	text-indent: 90px;
     transform-origin: center top;
     -webkit-animation: dangle 10s infinite;
@@ -328,9 +329,9 @@ a:active {
 }
 
 #message {
-	font-size: 1.3em; 
-	margin-left: 2.3em; 
-	padding-top: 1em; 
+	font-size: 1.3em;
+	margin-left: 2.3em;
+	padding-top: 1em;
 	position:relative;
 	font-family: 'Luckiest Guy', cursive;
 	color: grey;
@@ -338,7 +339,7 @@ a:active {
 
 #temperature {
 	width: 25%;
-	float:left; 
+	float:left;
 	margin-left: 1em;
 }
 
@@ -389,5 +390,3 @@ a:active {
 #add-location-sidebar:hover {
   background: grey;
 }
-
-

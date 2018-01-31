@@ -11,7 +11,7 @@
 /* general style for the form */
 .nl-form {
 	width: 100%;
-	margin: 1em auto 0 auto;
+	margin: 3em auto 0 auto;
 	font-size: 4em;
 	line-height: 1.5;
 	text-align: center;
@@ -192,7 +192,7 @@ input:focus::-moz-placeholder {
 	color: rgba(255,255,255,0.2);
 }
 
-input:-ms-input-placeholder {  
+input:-ms-input-placeholder {
 	color: rgba(255,255,255,0.8);
 }
 
